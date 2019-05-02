@@ -20,10 +20,9 @@ public class RemoveElement {
                     nums[pointer] = nums[i]; //copy current val to pointer
                     pointer++;
                     //if next value doesn't need to be deleted turn off dip
-                    dip = false;
-                    // if(nums[pointer] != val) {
-                    //     dip = false;
-                    // }
+                    if(nums[pointer] != val) {
+                        dip = false;
+                    }
                     l--; //decrement length
                     System.out.println("Move: "+nums[i]+ "->["+(pointer-1)+"], Pointer: "+pointer+", DIP: "+dip);
                 }
