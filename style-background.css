@@ -1,0 +1,150 @@
+/* CSS Document
+ *
+ * Colors:
+ * - Brown: #5c4b51
+ * - Mint: #8cbeb2
+ * - Peach: #f2ebbf
+ * - Orange: #f3b562
+ * - Red: #E74C3C
+ * - Gray: #222526
+ * - Light Gray: #D3D3D3
+ * - Black: #000000
+ * - Blue: #2C3E50
+ * - Off White: #ECF0F1
+ * - https://color.adobe.com/Flat-UI-color-theme-2469224/edit/?copy=true
+ *
+ * Menu:
+ * - Home (MJ)
+ * - about
+ * - resume
+ * - projects
+ * - contact
+ */
+
+/*Page*/
+html, body{
+	-webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    /*min-width: 860px;*/
+	height: 100%;
+    margin: 0 auto;
+    background: #121212;
+    background-image: url("../images/bg-bmore-bw-small.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+/* NAVIGATION Full width nav bar at the top with position fixed and aligned to the top */
+#nav{
+    width: 50%;
+    height: 40px;
+    /*background-color: #ECF0F1;*/
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: right;
+    font-weight: bold;
+}
+#nav-home{
+    width: 50%;
+    height: 40px;
+    /*background-color: #ECF0F1;*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: bold;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    height: inherit;
+    line-height: 100%;
+    display: inline-block;
+    /*width: 150px;*/
+    /*border-radius: 0px;*/
+    text-align: center;
+    padding: 10px 20px 0 20px;*/
+}
+a{
+    /*font-weight: bold;*/
+    text-decoration: none;
+    color: #ECF0F1;
+    outline: none;
+}
+
+#item-index a:hover{
+    color: #E74C3C;
+}
+#item-about a:hover{
+    color: #E74C3C;
+}
+#item-resume a:hover{
+    color: #E74C3C;
+}
+#item-projects a:hover{
+    color: #E74C3C;
+}
+#item-contact a:hover{
+    color: #E74C3C;
+}
+/*Mobile*/
+@media only screen and (max-width: 768px){
+	/*Page*/
+	html, body{
+		-webkit-font-smoothing: antialiased;
+	    font-family: 'Open Sans', sans-serif;
+	    width: 100%;
+		height: 100%;
+	    margin: 0 auto;
+
+	    background: #121212;
+	    background-image: url("../images/bg-bmore-bw-small.jpg");
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    background-size: cover;
+	    background-blend-mode: overlay;
+	}
+
+    #nav{
+	    top: 0px;
+	    right: 0px;
+	    margin: 0 auto;
+	    text-align: right;
+	    font-weight: bold;
+	}
+	#nav-home{
+        float: left;
+	    margin: 0 auto;
+	    text-align: left;
+	    font-weight: bold;
+	}
+	ul{
+	    list-style-type: none;
+	    padding: 0;
+	    margin: 0;
+        font-size: 2em;
+	}
+	li{
+	    height: inherit;
+	    line-height: 125%;
+	    display: block;
+	    text-align: right;
+	    padding: 0 10px 0 0;
+	}
+    #nav-home ul li{
+	    height: inherit;
+	    line-height: 125%;
+	    display: block;
+	    text-align: left;
+	    padding: 0 0 0 10px;
+	}
+}
