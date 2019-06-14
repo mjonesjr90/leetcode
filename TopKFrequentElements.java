@@ -6,35 +6,29 @@ class TopKFrequentElements {
             return new ArrayList<>(Arrays.asList(nums[0]));
         }
         else {
-            //Determine the highest value and set ArrayList length
-            int max = 0;
+        	//Count and add numbers to HashMap
+        	HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
             for(int i = 0; i < nums.length; i++) {
-                if(nums[i] > max) {
-                    max = nums[i];
-                }
-            }
-            List<Integer> counter = new ArrayList<Integer>();
-            for(int i = 0; i < max + 1; i++) {
-                counter.add(0);
+            	map.put(nums[i], map.getOrDefault(nums[i], 1) + 1);
             }
 
-            //get the current value at index and add/increment the corresponding
-            //index in counter
-            for(int i = 0; i < nums.length; i++) {
-                if(counter.get(nums[i]) >= 1) {
-                    counter.set(nums[i], counter.get(nums[i]) + 1);
-                }
-                else {
-                    counter.set(nums[i], 1);
-                }
+            //Create a max priority queue to sort in order by value in map
+            PriorityQueue<Map.Entry<Integer, Integer>> heap = new PriorityQueue<>(Collections.reverseOrder(Comparator.comparing(entry -> entry.getValue())));
+
+            //Iterate through the map and add to the pq you created
+            for(Map.Entry<Integer,Integer> entry: map.entrySet()){
+                heap.add(entry);
             }
 
-            //sort the ArrayList and return the top k values
-            Collections.sort(counter, Collections.reverseOrder());
+            //Create a list to return
             List<Integer> ans = new ArrayList<Integer>();
-            for(int i = 0; i < k; i++) {
-                ans.add(counter.get(i));
+
+            //Iterate through heap, polling (which removes the head) k elements, and appending to list
+            for(int i = 0; i < k; i++){
+            	Map.Entry<Integer, Integer> ent = heap.poll();
+                ans.add(ent.getKey());
             }
+
             return ans;
         }
     }
@@ -47,7 +41,7 @@ class TopKFrequentElements {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 1, 1, 2, 2, 3};
+        int[] a = {1, 1, 2, 2, 2, 3, 3, 3, 3};
         print(topKFrequent(a, 2));
     }
 }
